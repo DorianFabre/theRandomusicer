@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>the Randomusicer</title>
+	<style>
+		html, body {
+			height: 100%;
+			display: grid;
+			margin:0;
+			padding:0;
+			background-color: #000;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		body {
+			background-image: url("kiss.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		div {
+			position: relative;
+			display: block;
+			width:450px;
+			margin: 33.333% auto auto auto;
+			padding: 30px;
+			background-color: #fff;
+			text-align: center;
+			box-shadow: 0 0 40px 10px #000;
+		}
+		button {
+			position: relative;
+			display: block;
+			margin: 35px auto 40px auto;
+			font-size: 30px;
+			padding: 20px;
+			border-radius: 10px;
+		}
+		button:hover {
+			cursor:pointer;
+		}
+	</style>
+	<script>
+		const allChoices = [
+			"Play a song for Dorian",
+			"Play a song for Sue",
+			"Play a song for Jen",
+			"Play an acoustic song",
+			"Play an indie song",
+			"Play a britpop song",
+			"Play a seasonal song",
+			"Play a metal song",
+			"Play a punk song",
+			"Play an emo song",
+			"Play a disco song",
+			"Play a new romantic song",
+			"Play a ska song",
+			"Play a nu-metal song",
+			"Play a post punk song",
+			"Play a reggae song",
+			"Play a folk rock song",
+			"Play a 60's song",
+			"Play a 70's song",
+			"Play a 80's song",
+			"Play a 90's song",
+			"Play a cover song",
+			"Play a song you really, really hate",
+			"Play a driving song",
+			"Play a dancing song",
+			"Play a drinking song",
+			"Play an animal song",
+			"Play a festivalicious song",
+			"Play a duo's song",
+			"Play a song about a place",
+			"Play a song your parents would like",
+			"Play a rude song",
+			"Play a foreign song",
+			"Play a song with a story",
+			"Play an unexpected song",
+			"Play a song for underpants dancing",
+			"Play a song that should be in a musical",
+			"Play a new song"
+		];
+
+		const chooseIt = () => {
+			const rColour = Math.floor(Math.random() * 16777215);
+			document.getElementById('button').style.backgroundColor = '#' + rColour.toString(16);
+			if (16777215 - rColour <= 16777215 / 2){
+				document.getElementById('button').style.color = 'black';
+			} else {
+				document.getElementById('button').style.color = 'white';
+			}
+			const rNum = Math.floor(Math.random() * allChoices.length)
+			document.getElementById('output').innerHTML = allChoices[rNum];
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<h1>THE RANDOMUSICER</h1>
+		<button id="button" onclick="chooseIt()">Random my bitch up!</button>
+		<h2 id="output">Press the button, dumbass.</h2>
+	</div>
+</body>
+</html>
